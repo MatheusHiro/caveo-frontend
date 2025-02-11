@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { ProductItem } from '../domain/types/product';
 
 export interface CartItem {
   id: number;

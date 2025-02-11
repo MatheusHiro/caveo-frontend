@@ -1,3 +1,4 @@
+'use client'
 import { FaMinus, FaPlus } from "react-icons/fa"
 import { CartItem } from "../hooks/useCartStore"
 import { useState } from "react"

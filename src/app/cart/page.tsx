@@ -1,7 +1,6 @@
 'use client'
 
 import CartSelector from '../components/CartSelector';
-import QuantitySelector from '../components/CartSelector';
 import { useCartStore } from '../hooks/useCartStore';
 import { FaShoppingCart, FaTrash } from "react-icons/fa";
 
