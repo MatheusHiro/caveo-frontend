@@ -4,7 +4,7 @@ import { ProductItem } from "../types/product";
 const API_URL = "https://fakestoreapi.com/products";
 
 export const fetchProducts = async ({ pageParam = 1 }: { pageParam?: number }) => {
-    const allProducts = await axios.get<ProductItem[]>('https://fakestoreapi.com/products');
+    const allProducts = await axios.get<ProductItem[]>(API_URL);
 
     const perPage = 8;
     const start = (pageParam - 1) * perPage;
@@ -17,6 +17,6 @@ export const fetchProducts = async ({ pageParam = 1 }: { pageParam?: number }) =
 };
 
 export async function fetchProduct(id: string): Promise<ProductItem> {
-    const response = await axios.get<ProductItem>(`https://fakestoreapi.com/products/${id}`);
+    const response = await axios.get<ProductItem>(`${API_URL}/${id}`);
     return response.data;
 }

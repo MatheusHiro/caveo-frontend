@@ -7,6 +7,7 @@ import RatingGroup from "./RatingGroup";
 import { useState } from "react";
 import QuantitySelector from "./QuantitySelector";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface ProductCardProps {
     product: ProductItem;
@@ -39,7 +40,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         >
             <Link href={`/products/${product.id}`} className="flex flex-col flex-1">
                 <div className="w-full h-40 md:h-48 flex justify-center items-center">
-                    <img
+                    <Image
                         src={product.image}
                         alt={product.title}
                         className="max-h-full max-w-full object-contain"

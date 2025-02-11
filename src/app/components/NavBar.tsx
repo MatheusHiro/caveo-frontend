@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useCartStore } from "../hooks/useCartStore"
 import { FaShoppingCart } from "react-icons/fa";
 
@@ -6,12 +7,12 @@ export default function NavBar() {
     return (
         <div className="fixed w-full top-0 left-0 bg-white z-50">
             <div className="flex items-center justify-between px-[4rem] py-[1rem]">
-                <a href="/" className="font-semibold">
+                <Link href="/" className="font-semibold">
                     <div className="flex items-center text-xl">
                         Shop
                     </div>
-                </a>
-                <a href="/cart">
+                </Link>
+                <Link href="/cart">
                     <button
 
                         className="rounded-full border border-black outline-solid w-[3rem] h-[3rem] relative"
@@ -37,7 +38,7 @@ export default function NavBar() {
                         )}
 
                     </button>
-                </a>
+                </Link>
             </div>
         </div>
     )

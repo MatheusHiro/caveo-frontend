@@ -1,8 +1,10 @@
 'use client'
 
+import Image from 'next/image';
 import CartSelector from '../components/CartSelector';
 import { useCartStore } from '../hooks/useCartStore';
 import { FaShoppingCart, FaTrash } from "react-icons/fa";
+import Link from 'next/link';
 
 export default function Cart() {
     const { cart, removeFromCart, clearCart } = useCartStore();
@@ -24,7 +26,7 @@ export default function Cart() {
                             className="flex items-center bg-white p-4 border rounded-lg shadow-md"
                         >
                             <div className='w-20 h-20 ' >
-                                <img
+                                <Image
                                     src={item.image}
                                     alt={item.title}
                                     className="max-h-full max-w-full object-cover rounded-lg border"
@@ -33,9 +35,9 @@ export default function Cart() {
 
 
                             <div className="flex-1 px-4">
-                                <a href={`products/${item.id}`}>
+                                <Link href={`products/${item.id}`}>
                                     <h2 className="text-lg font-semibold">{item.title}</h2>
-                                </a>
+                                </Link>
                                 <p className="text-gray-600">Preço: <span className="font-medium text-green-600">${item.price}</span></p>
                                 <p className="text-gray-600">Quantidade: <CartSelector item={item} /></p>
 

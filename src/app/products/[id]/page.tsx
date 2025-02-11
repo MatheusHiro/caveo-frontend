@@ -7,6 +7,7 @@ import { ProductItem } from '@/app/domain/types/product';
 import RatingGroup from '@/app/components/RatingGroup';
 import QuantitySelector from '@/app/components/QuantitySelector';
 import { FaCartPlus } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function ProductPage() {
     const params = useParams();
@@ -44,7 +45,7 @@ export default function ProductPage() {
         <div className="container mt-10 mx-auto px-4 py-10 flex items-center justify-center min-h-screen">
             <div className="grid mx-10 md:grid-cols-2 gap-8 items-center">
                 <div className="flex justify-center">
-                    <img
+                    <Image
                         src={product.image}
                         alt={product.title}
                         className="p-2 w-60 h-60 md:w-80 md:h-80 object-contain border rounded-lg shadow-sm"
