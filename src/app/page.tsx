@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <div>
       <div className="container mt-16 mx-auto pt-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 mx-10 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {data?.pages.flatMap((page) =>
             page.products.map((product) => (
               <ProductCard key={product.id} product={product} />

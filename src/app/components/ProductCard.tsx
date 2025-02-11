@@ -43,9 +43,12 @@ export default function ProductCard({ product }: ProductCardProps) {
                     <Image
                         src={product.image}
                         alt={product.title}
-                        className="max-h-full max-w-full object-contain"
+                        width={320}
+                        height={180}
+                        className="object-contain max-w-full max-h-full"
                     />
                 </div>
+
 
                 <p className="mt-2 font-semibold">{product.title}</p>
             </Link>

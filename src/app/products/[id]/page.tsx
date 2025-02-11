@@ -48,7 +48,9 @@ export default function ProductPage() {
                     <Image
                         src={product.image}
                         alt={product.title}
-                        className="p-2 w-60 h-60 md:w-80 md:h-80 object-contain border rounded-lg shadow-sm"
+                        width={320}
+                        height={320}
+                        className="object-contain sm:w-60 sm:h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 border rounded-lg shadow-sm"
                     />
                 </div>
 

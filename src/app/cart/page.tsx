@@ -25,13 +25,13 @@ export default function Cart() {
                             key={item.id}
                             className="flex items-center bg-white p-4 border rounded-lg shadow-md"
                         >
-                            <div className='w-20 h-20 ' >
-                                <Image
-                                    src={item.image}
-                                    alt={item.title}
-                                    className="max-h-full max-w-full object-cover rounded-lg border"
-                                />
-                            </div>
+                            <Image
+                                src={item.image}
+                                alt={item.title}
+                                width={90}
+                                height={90}
+                                className="p-[.25rem] object-cover rounded-lg border"
+                            />
 
 
                             <div className="flex-1 px-4">
