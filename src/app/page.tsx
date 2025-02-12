@@ -1,7 +1,7 @@
 'use client'
 
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { fetchProducts } from "./domain/api/products";
+import { fetchProducts } from "./domain/service/productServices";
 import { useEffect, useRef } from "react";
 import ProductCard from "./components/ProductCard";
 

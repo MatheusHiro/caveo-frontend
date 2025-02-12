@@ -33,6 +33,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
     return (
         <div
+            id="ProductCard"
             key={product.id}
             className="flex flex-col border p-4 rounded-lg shadow-md h-full space-y-[1rem]"
             onMouseLeave={() => resetQuantity()}
@@ -53,8 +54,8 @@ export default function ProductCard({ product }: ProductCardProps) {
                 <p className="mt-2 font-semibold">{product.title}</p>
             </Link>
 
-            <div className="flex justify-between items-end mt-auto">
-                <div>
+            <div className="flex flex-row gap-[.5rem] items-end md:items-start md:flex-col xl:flex-row xl:items-end mt-auto">
+                <div className="flex flex-col flex-1">
                     <p className="text-gray-600">${product.price}</p>
                     <RatingGroup rating={product.rating} />
                 </div>
@@ -63,9 +64,11 @@ export default function ProductCard({ product }: ProductCardProps) {
                     <></>
                     :
                     <button
+                        id="HoveredButton"
                         onMouseEnter={() => setIsHovered(true)}
-                        className="p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
+                        className="m-0 p-2 flex flex-none xl:flex-none md:w-full xl:w-fit w-fit items-center gap-[.5rem] justify-center flex bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
                     >
+                        <div className="hidden md:block xl:hidden">Adicionar ao </div>
                         <FaShoppingCart />
                     </button>
                 }
@@ -86,6 +89,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                     >
                         <QuantitySelector item={cartItem} onQuantityChange={(newQuantity) => setQuantity(newQuantity)} className="w-[5rem]" />
                         <button
+                            id="AddCartButton"
                             onClick={() => addToCart(cartItem, quantity)}
                             className="p-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition duration-300 shadow-md"
                         >

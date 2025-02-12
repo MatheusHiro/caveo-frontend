@@ -2,7 +2,7 @@
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { useCartStore } from '../../hooks/useCartStore';
-import { fetchProduct } from '@/app/domain/api/products';
+import { fetchProduct } from '@/app/domain/service/productServices';
 import { ProductItem } from '@/app/domain/types/product';
 import RatingGroup from '@/app/components/RatingGroup';
 import QuantitySelector from '@/app/components/QuantitySelector';

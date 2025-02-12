@@ -1,20 +1,15 @@
-import axios from "axios";
+import axios, { Axios } from "axios";
 import { ProductItem } from "../types/product";
 
-const API_URL = "https://fakestoreapi.com/products";
+const API_URL = "https://fakestoreapi.com/";
 
-export const fetchProducts = async ({ pageParam = 1 }: { pageParam?: number }) => {
-    const allProducts = await axios.get<ProductItem[]>(API_URL);
+const api = axios.create({
+    baseURL: API_URL,
+})
 
-    const perPage = 8;
-    const start = (pageParam - 1) * perPage;
-    const end = start + perPage;
+export default api
 
-    return {
-        products: allProducts.data.slice(start, end),
-        nextPage: end < allProducts.data.length ? pageParam + 1 : null,
-    };
-};
+
 
 export async function fetchProduct(id: string): Promise<ProductItem> {
     const response = await axios.get<ProductItem>(`${API_URL}/${id}`);
