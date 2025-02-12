@@ -1,5 +1,4 @@
-import axios, { Axios } from "axios";
-import { ProductItem } from "../types/product";
+import axios from "axios";
 
 const API_URL = "https://fakestoreapi.com/";
 
@@ -11,7 +10,3 @@ export default api
 
 
 
-export async function fetchProduct(id: string): Promise<ProductItem> {
-    const response = await axios.get<ProductItem>(`${API_URL}/${id}`);
-    return response.data;
-}
